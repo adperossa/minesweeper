@@ -11,6 +11,7 @@ provider:
   lambdaHashingVersion: 20201221
   profile: adperossa
   region: sa-east-1
+  endpointType: REGIONAL
 
 functions:
   sls_minesweeper:

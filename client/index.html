@@ -1,13 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minesweeper</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minesweeper</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/themesberg/windows-95-ui-kit/css/w95.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header class="header">
+  <main>
+    <section style="height: 100vh;" class="full-height d-flex align-items-center bg-secondary">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 d-flex align-items-center justify-content-center">
+            <div class="card card-tertiary">
+              <div class="card-header text-center">
+                <span>Retro Minesweeper</span>
+              </div>
+              <div class="card-body">
+
+                <div class="canvas">
+                  <div id="container" class="grid-container"></div>
+                </div>
+
+                <div class="d-block justify-content-center align-items-center mt-4">
+                  <div class="form-group d-flex align-items-center justify-content-between">
+                    <label class="mr-2" for="rows">Filas</label>
+                    <input class="form-control w-25 mr-2" type="number" min="3" max="200" value="10" name="rows" id="rows">
+                    <label class="mr-2" for="cols">Columnas</label>
+                    <input class="form-control w-25 mr-2" type="number" min="3" max="200" value="10" name="cols" id="cols">
+                    <label class="mr-2" for="mineRatio">Prob. Minas</label>
+                    <input class="form-control w-25 mr-2" type="number" min="5" max="50" value="15" name="mineratio" id="mineratio">
+                    <label class="ml-2">%</label>
+                  </div>
+                  <div class="form-group d-flex align-items-center justify-content-between">
+                    <button type="button" id="startBtn">
+                      Comenzar
+                    </button>
+                    <button type="button" id="saveBtn">
+                      Guardar
+                    </button>
+                    <button type="button" id="loadBtn">
+                      Cargar
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- <header class="header">
         <label for="rows">Filas</label>
         <input type="number" min="10" max="200" value="20" name="rows" id="rows">
         <label for="cols">Columnas</label>
@@ -25,11 +76,12 @@
     </header>
     <section class="canvas" id="canvas">
         <div id="container" class="grid-container"></div>
-    </section>
+    </section> -->
 
-    <script src="Cell.js"></script>
-    <script src="Board.js"></script>
-    <script src="Game.js"></script>
-    <script src="index.js"></script>
+  <script src="Cell.js"></script>
+  <script src="Board.js"></script>
+  <script src="Game.js"></script>
+  <script src="index.js"></script>
 </body>
+
 </html>

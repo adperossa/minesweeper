@@ -5,8 +5,8 @@ class Game {
     this.ready = false;
   }
 
-  startGame({ cols, rows }) {
-    this.board = new Board(this.containerDiv, cols, rows, this);
+  startGame({ cols, rows, mineRatio }) {
+    this.board = new Board(this.containerDiv, cols, rows, mineRatio, this);
     this.board.drawGrid();
     this.ready = true;
   }
@@ -14,6 +14,7 @@ class Game {
   saveGame() {
     const boardState = this.board.getBoardState();
     window.localStorage.setItem('boardState', JSON.stringify(boardState));
+    alert('Juego guardado!');
   }
 
   loadGame() {
@@ -21,8 +22,9 @@ class Game {
     if (savedState) {
       this.board.cells = JSON.parse(savedState);
       this.board.drawGrid();
+      alert('Juego cargado!');
     } else {
-      alert('No saved game to load!');
+      alert('No hay juegos para cargar!');
     }
   }
 
@@ -30,16 +32,17 @@ class Game {
     switch (gameStatus) {
       case 'won':
         this.ready = false;
-        alert('You win!');
+        alert('Ganaste!');
         break;
 
       case 'lost':
         this.ready = false;
-        alert('You lose!');
+        alert('Perdiste!');
         this.board.drawGrid(true);
         break;
 
       default:
+        this.ready = true;
         break;
     }
 

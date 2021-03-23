@@ -1,10 +1,11 @@
-const APIEndpoint = 'https://j3fpm6h6la.execute-api.sa-east-1.amazonaws.com/dev/';
+const APIEndpoint = 'https://jni647ayy2.execute-api.sa-east-1.amazonaws.com/dev/';
 
 const startBtn = document.getElementById("startBtn");
 const saveBtn = document.getElementById("saveBtn");
 const loadBtn = document.getElementById("loadBtn");
 const inputRows = document.getElementById("rows");
 const inputCols = document.getElementById("cols");
+const inputMineRatio = document.getElementById("mineratio");
 
 const data = {
     containerDiv: document.getElementById("container")
@@ -15,7 +16,8 @@ const game = new Game(data);
 startBtn.addEventListener("click", function() {
     game.startGame({
         cols: inputCols.value,
-        rows: inputRows.value
+        rows: inputRows.value,
+        mineRatio: inputMineRatio.value
     });
 });
 
@@ -40,14 +42,18 @@ async function sendData(boardState, dimensions, action, cell) {
         action,
         cell
     };
-
-    const response = await fetch(APIEndpoint, {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
-    const data = await response.json();
-    return data;
+    
+    try {
+        const response = await fetch(APIEndpoint, {
+            method: 'POST',
+            body: JSON.stringify(body),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const data = await response.json();
+        return data;
+    } catch(err) {
+        throw err;
+    }
 }

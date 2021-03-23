@@ -1,0 +1,22 @@
+service: minesweeper
+
+app: serverless-minesweeper
+org: adperossa
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  profile: adperossa
+  region: sa-east-1
+
+functions:
+  sls_minesweeper:
+    handler: app.handler
+    events:
+      - http:
+          path: /
+          method: post
+          cors: true

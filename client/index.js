@@ -1,4 +1,4 @@
-const APIEndpoint = 'https://638i4o7tdb.execute-api.sa-east-1.amazonaws.com/default';
+const APIEndpoint = 'https://j3fpm6h6la.execute-api.sa-east-1.amazonaws.com/dev/';
 
 const startBtn = document.getElementById("startBtn");
 const saveBtn = document.getElementById("saveBtn");
@@ -43,7 +43,10 @@ async function sendData(boardState, dimensions, action, cell) {
 
     const response = await fetch(APIEndpoint, {
         method: 'POST',
-        body: JSON.stringify(body)
+        body: JSON.stringify(body),
+        headers: {
+            'Content-Type': 'application/json'
+        }
     });
     const data = await response.json();
     return data;

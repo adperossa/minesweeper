@@ -51,29 +51,32 @@ const minesweeperEngine = async (event) => {
     return boardState;
   }
 
+  function isCellOutOfBounds(row, col) {
+    return (
+      col < 0 ||
+      col >= dimensions.cols ||
+      row < 0 ||
+      row >= dimensions.rows
+    )
+  }
+
   function checkAdjacentCells(cell) {
     const adjCellsArray = [];
 
     for (let newRow = cell.row - 1; newRow < cell.row + 2; newRow++) { // left-up, left, left-down
-      if (
-        (cell.col - 1) < 0 ||
-        newRow < 0 ||
-        newRow >= dimensions.rows
-      ) continue;
+      
+      if (isCellOutOfBounds(newRow, cell.col - 1)) continue;
+
       adjCellsArray.push(boardState[newRow][cell.col - 1]);
     }
 
     // up, down
-    if (!((cell.row - 1) < 0)) adjCellsArray.push(boardState[cell.row - 1][cell.col]);
-    if (!((cell.row + 1) >= dimensions.rows)) adjCellsArray.push(boardState[cell.row + 1][cell.col]);
+    if (!isCellOutOfBounds(cell.row - 1, cell.col)) adjCellsArray.push(boardState[cell.row - 1][cell.col]);
+    if (!isCellOutOfBounds(cell.row + 1, cell.col)) adjCellsArray.push(boardState[cell.row + 1][cell.col]);
 
 
     for (let newRow = cell.row - 1; newRow < cell.row + 2; newRow++) { // right-up, right, right-down
-      if (
-        (cell.col + 1) >= dimensions.cols ||
-        newRow < 0 ||
-        newRow >= dimensions.rows
-      ) continue;
+      if (isCellOutOfBounds(newRow, cell.col + 1)) continue;
       adjCellsArray.push(boardState[newRow][cell.col + 1]);
     }
 

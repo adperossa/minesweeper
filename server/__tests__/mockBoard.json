@@ -1,0 +1,89 @@
+[
+  [
+    {
+      "row": 0,
+      "col": 0,
+      "id": "cell-0-0",
+      "uncovered": false,
+      "hasBomb": true,
+      "flagged": false,
+      "adjacentBombCount": null
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "id": "cell-0-1",
+      "uncovered": false,
+      "hasBomb": false,
+      "flagged": false,
+      "adjacentBombCount": null
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "id": "cell-0-2",
+      "uncovered": false,
+      "hasBomb": false,
+      "flagged": false,
+      "adjacentBombCount": null
+    }
+  ],
+  [
+    {
+      "row": 1,
+      "col": 0,
+      "id": "cell-1-0",
+      "uncovered": false,
+      "hasBomb": false,
+      "flagged": false,
+      "adjacentBombCount": null
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "id": "cell-1-1",
+      "uncovered": false,
+      "hasBomb": true,
+      "flagged": true,
+      "adjacentBombCount": null
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "id": "cell-1-2",
+      "uncovered": false,
+      "hasBomb": false,
+      "flagged": false,
+      "adjacentBombCount": null
+    }
+  ],
+  [
+    {
+      "row": 2,
+      "col": 0,
+      "id": "cell-2-0",
+      "uncovered": false,
+      "hasBomb": false,
+      "flagged": false,
+      "adjacentBombCount": null
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "id": "cell-2-1",
+      "uncovered": false,
+      "hasBomb": false,
+      "flagged": false,
+      "adjacentBombCount": null
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "id": "cell-2-2",
+      "uncovered": false,
+      "hasBomb": false,
+      "flagged": false,
+      "adjacentBombCount": null
+    }
+  ]
+]

@@ -100,7 +100,7 @@ const minesweeperEngine = async (event) => {
     body: JSON.stringify({
       success: !error,
       error: error ? error : undefined,
-      gameStatus: checkGameStatus(),
+      gameStatus: error ? null : checkGameStatus(),
       newBoardState
     })
   };

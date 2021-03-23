@@ -7,7 +7,9 @@ El estilado fue utilizando de base el tema de Bootstrap [Windows 95 UI Kit](http
 
 ## Cómo jugarlo
 
-La interfaz de usuario puede correrse simplemente abriendo el archivo `index.html` con cualquier navegador. Por defecto utiliza un backend ya funcionando en AWS, dicho endpoint puede cambiarse manualmente editando la primera línea del archivo `index.js`.
+Podés probarlo sin necesidad de instalar nada [haciendo click acá](https://adperossa.github.io/minesweeper/).
+
+La interfaz de usuario puede correrse simplemente abriendo el archivo `index.html` de la carpeta `client`con cualquier navegador. Por defecto utiliza un backend ya funcionando en AWS, dicho endpoint puede cambiarse manualmente editando la primera línea del archivo `index.js`.
 
 Para correr una instancia propia de la función lambda, primero es necesario situarse en la carpeta `server` e instalar las dependencias:
 ```
